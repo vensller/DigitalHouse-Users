@@ -19,8 +19,12 @@ a {
   align-items: center;
 }
 
-.black {  
-  background: #000;
+.dark-mode {
+  background: linear-gradient(-90deg, #343435, #5a575b);
+}
+
+.dark-mode > form > button {
+  background: #162d43;
 }
 
 form {
