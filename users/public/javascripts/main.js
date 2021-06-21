@@ -1,8 +1,8 @@
-const button = document.getElementById("loginBtn");
-console.log(button);
+// const button = document.getElementById("loginBtn");
+// console.log(button);
 
-const form = document.getElementById("form");
-console.log(form);
+// const form = document.getElementById("form");
+// console.log(form);
 
 // let color = 1;
 
@@ -26,8 +26,7 @@ console.log(form);
 // }, 1000);
 
 // setInterval(() => {
-    const background = document.getElementById("background");
-    background.classList.toggle("dark-mode");
-
-    console.log(document.querySelectorAll(".item"));
+    // const background = document.getElementById("background");
+    // background.classList.toggle("dark-mode");
 // }, 1000);
+
