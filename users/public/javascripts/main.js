@@ -28,4 +28,6 @@ console.log(form);
 // setInterval(() => {
     const background = document.getElementById("background");
     background.classList.toggle("dark-mode");
+
+    console.log(document.querySelectorAll(".item"));
 // }, 1000);
