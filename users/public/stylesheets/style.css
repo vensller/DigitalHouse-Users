@@ -63,3 +63,10 @@ form > input {
 form > input::placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
+
+#darkBtn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 24px;
+}

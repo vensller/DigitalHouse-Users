@@ -30,3 +30,29 @@
     // background.classList.toggle("dark-mode");
 // }, 1000);
 
+function onClickSubmit(event) {
+    event.preventDefault();
+    const inpUser = document.getElementById("user");
+    const inpPassword = document.getElementById("password");
+    console.log(`Usuário: ${inpUser.value}. Senha: ${inpPassword.value}`);
+}
+
+function onClickDarkMode(event) {
+    console.log(event);
+
+    const background = document.getElementById("background");
+    
+    background.classList.toggle("dark-mode");
+
+    if (background.classList.contains("dark-mode")) {
+        event.target.innerText = "default";
+    }else event.target.innerText = "dark";
+}
+
+window.onload = function() {
+    const form = document.getElementById("form");
+    form.addEventListener("submit", onClickSubmit);
+
+    const darkModeButton = document.getElementById("darkBtn"); 
+    darkModeButton.addEventListener("click", onClickDarkMode)
+}
