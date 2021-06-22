@@ -5,13 +5,23 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <div id="background" class="background">
+    <div id="background" class="background">      
       <form id="form">
         <input id="user" type="text" placeholder="Digite seu usuário"/>
         <input id="password" type="password" placeholder="Digite sua senha"/>
         <button id="loginBtn" type="submit">Login</button>
       </form>               
       <button id="darkBtn" type="button">dark</button>
+      
+      <div class="dropdown">
+        <button id="dropbtn" class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+          <a href="#">Minha conta</a>
+          <a href="#">Meus pedidos</a>
+          <a href="#">Produtos</a>
+          <a href="#">Sair</a>
+        </div>
+      </div>
     </div>            
     <script src="/javascripts/main.js"></script>        
   </body>

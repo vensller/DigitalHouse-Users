@@ -49,10 +49,21 @@ function onClickDarkMode(event) {
     }else event.target.innerText = "dark";
 }
 
+function onClickDropdown() {
+    const menu = document.querySelector(".dropdown-content");
+    // if (menu.style.display == "none") {
+    //     menu.style.display = "block";
+    // }else menu.style.display = "none";
+    menu.classList.toggle("show");
+}
+
 window.onload = function() {
     const form = document.getElementById("form");
     form.addEventListener("submit", onClickSubmit);
 
     const darkModeButton = document.getElementById("darkBtn"); 
-    darkModeButton.addEventListener("click", onClickDarkMode)
+    darkModeButton.addEventListener("click", onClickDarkMode);
+
+    const dropdownMenu = document.getElementById("dropbtn");
+    dropdownMenu.addEventListener("click", onClickDropdown);
 }
