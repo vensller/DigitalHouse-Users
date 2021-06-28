@@ -61,9 +61,9 @@ window.onload = function() {
     const form = document.getElementById("form");
     form.addEventListener("submit", onClickSubmit);
 
-    const darkModeButton = document.getElementById("darkBtn"); 
-    darkModeButton.addEventListener("click", onClickDarkMode);
+    // const darkModeButton = document.getElementById("darkBtn"); 
+    // darkModeButton.addEventListener("click", onClickDarkMode);
 
-    const dropdownMenu = document.getElementById("dropbtn");
-    dropdownMenu.addEventListener("click", onClickDropdown);
+    // const dropdownMenu = document.getElementById("dropbtn");
+    // dropdownMenu.addEventListener("click", onClickDropdown);
 }
