@@ -30,11 +30,78 @@
     // background.classList.toggle("dark-mode");
 // }, 1000);
 
+function onValidateUser() {
+    const inpUser = document.getElementById("user");
+    const user = inpUser.value;
+    const userError = document.getElementById("userError");
+    userError.classList.remove("show");
+    const errors = [];
+
+    if (!user) {
+        errors.push({
+            element: userError,
+            message: "Usuário precisa ser informado"
+        });
+        // userError.innerText = "Usuário precisa ser informado";
+        // userError.classList.add("show");
+        // return;
+    }
+
+    if (user.indexOf(" ") >= 0) {
+        errors.push({
+            element: userError,
+            message: "O usuário não pode conter espaços em branco"
+        });
+        // userError.innerText = "O usuário não pode conter espaços em branco";
+        // userError.classList.add("show");
+        // return;
+    }
+
+    if (errors.length > 0) {
+        errors.forEach(error => {
+            error.element.innerText = error.message;
+            error.element.classList.add("show");
+        });        
+    }
+
+    return errors.length == 0;
+}
+
+function onValidatePassword() {
+    const inpPassword = document.getElementById("password");
+    const passwordError = document.getElementById("passwordError");
+    passwordError.classList.remove("show");
+    const password = inpPassword.value;
+    const errors = [];
+
+    if(!password){
+        errors.push({
+            element: passwordError,
+            message: "A senha precisa ser informada"
+        });
+        // passwordError.innerText = "senha precisa ser informado";
+        // passwordError.classList.add("show")
+        // return
+    }
+
+    if (errors.length > 0) {
+        errors.forEach(error => {
+            error.element.innerText = error.message;
+            error.element.classList.add("show");
+        });
+    }
+
+    return errors.length == 0;
+}
+
 function onClickSubmit(event) {
     event.preventDefault();
-    const inpUser = document.getElementById("user");
-    const inpPassword = document.getElementById("password");
-    console.log(`Usuário: ${inpUser.value}. Senha: ${inpPassword.value}`);
+    
+    if (!onValidatePassword(event) || !onValidateUser(event)) {
+        return;
+    }    
+    console.log('backend');
+    // chamada backend
 }
 
 function onClickDarkMode(event) {
@@ -60,7 +127,15 @@ function onClickDropdown() {
 window.onload = function() {
     const form = document.getElementById("form");
     form.addEventListener("submit", onClickSubmit);
+    
+    const background = document.getElementById("background");    
+    background.classList.toggle("dark-mode");
 
+    const userInput = document.getElementById("user");
+    userInput.addEventListener("blur", onValidateUser);
+
+    const passwordInput = document.getElementById("password");
+    passwordInput.addEventListener("blur", onValidatePassword);
     // const darkModeButton = document.getElementById("darkBtn"); 
     // darkModeButton.addEventListener("click", onClickDarkMode);
 

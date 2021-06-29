@@ -7,7 +7,9 @@
   <body>
     <div id="background" class="background">      
       <form id="form">
-        <input id="user" type="text" placeholder="Digite seu usuário"/>
+        <span id="userError" class="error">Usuário incorreto</span>
+        <input id="user" type="text" placeholder="Digite seu usuário"/> 
+        <span id="passwordError" class="error">Senha incorreta</span>       
         <input id="password" type="password" placeholder="Digite sua senha"/>
         <button id="loginBtn" type="submit">Login</button>
       </form>               
