@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div id="background" class="background">      
+      <form id="form">
+        <span id="userError" class="error">Usuário incorreto</span>
+        <input id="user" type="text" placeholder="Digite seu usuário"/> 
+        <span id="passwordError" class="error">Senha incorreta</span>       
+        <input id="password" type="password" placeholder="Digite sua senha"/>
+        <button id="signupBtn" type="submit">Cadastrar</button>
+      </form>               
+      <!-- <button id="darkBtn" type="button">dark</button> -->
+      
+      <!-- <div class="dropdown">
+        <button id="dropbtn" class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+          <a href="#">Minha conta</a>
+          <a href="#">Meus pedidos</a>
+          <a href="#">Produtos</a>
+          <a href="#">Sair</a>
+        </div>
+      </div> -->
+    </div>            
+    <script src="/javascripts/signup.js"></script>        
+  </body>
+</html>
