@@ -22,6 +22,7 @@ async function onSubmitSignUp(event) {
         password
     });
     window.alert(`Usuário cadastrado com id ${data.id}`);
+    window.location.href = "/";
 }
 
 window.onload = function() {
