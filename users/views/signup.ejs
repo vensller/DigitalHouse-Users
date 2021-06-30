@@ -6,11 +6,11 @@
   </head>
   <body>
     <div id="background" class="background">      
-      <form id="form">
-        <span id="userError" class="error">Usuário incorreto</span>
-        <input id="user" type="text" placeholder="Digite seu usuário"/> 
-        <span id="passwordError" class="error">Senha incorreta</span>       
-        <input id="password" type="password" placeholder="Digite sua senha"/>
+      <form id="formSignup">
+        <span id="userErrorSignup" class="error">Usuário incorreto</span>
+        <input id="userSignup" type="text" placeholder="Digite seu usuário"/> 
+        <span id="passwordErrorSignup" class="error">Senha incorreta</span>       
+        <input id="passwordSignup" type="password" placeholder="Digite sua senha"/>
         <button id="signupBtn" type="submit">Cadastrar</button>
       </form>               
       <!-- <button id="darkBtn" type="button">dark</button> -->
@@ -25,6 +25,7 @@
         </div>
       </div> -->
     </div>            
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/javascripts/signup.js"></script>        
   </body>
 </html>
