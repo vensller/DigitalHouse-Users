@@ -25,7 +25,30 @@ async function onSubmitSignUp(event) {
     window.location.href = "/";
 }
 
+async function onBlurCep() {
+    const cepField = document.getElementById("cep");
+    const { data } = await axios.get(`https://viacep.com.br/ws/${cepField.value}/json/`);
+    
+    // const ufField = document.getElementById("uf"); 
+    // const logradouroField = document.getElementById("logradouro"); 
+    // const bairroField = document.getElementById("bairro"); 
+    // const cidadeField = document.getElementById("cidade"); 
+
+    // ufField.value = data.uf;
+    // logradouroField.value = data.logradouro;
+    // bairroField.value = data.bairro;
+    // cidadeField.value = data.cidade;
+    
+    document.getElementById("uf").value = data.uf; 
+    document.getElementById("logradouro").value = data.logradouro; 
+    document.getElementById("bairro").value = data.bairro; 
+    document.getElementById("cidade").value = data.localidade; 
+}
+
 window.onload = function() {
     const form = document.getElementById("formSignup");
     form.addEventListener("submit", onSubmitSignUp);
+
+    const cepField = document.getElementById("cep");
+    cepField.addEventListener("blur", onBlurCep);
 }
