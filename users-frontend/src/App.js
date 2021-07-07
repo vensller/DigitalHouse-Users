@@ -5,20 +5,31 @@ import axios from 'axios';
 function App() {
   const [cep, setCep] = useState('89087491');
   const [logradouro, setLogradouro] = useState('');
+  const [mustShow, setMustShow] = useState(true);
   
   async function onBlurCep() {          
     const { data } = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
     setLogradouro(data.logradouro);
   }
 
+  function onClickHide() {
+    setMustShow(!mustShow);
+  }
+
   return (
-    <div id="background" className="background">      
+    <div id="background" className="background">  
+      <button type="button" onClick={onClickHide}>Esconder campos</button>    
       <form id="formSignup">
-        <span id="userErrorSignup" className="error">Usuário incorreto</span>
-        <input id="userSignup" type="text" placeholder="Digite seu usuário"/> 
-        <span id="passwordErrorSignup" className="error">Senha incorreta</span>       
-        <input id="passwordSignup" type="password" placeholder="Digite sua senha"/>
-       
+
+        {mustShow && (
+          <>
+            <span id="userErrorSignup" className="error">Usuário incorreto</span>
+            <input id="userSignup" type="text" placeholder="Digite seu usuário"/> 
+            <span id="passwordErrorSignup" className="error">Senha incorreta</span>       
+            <input id="passwordSignup" type="password" placeholder="Digite sua senha"/>
+          </>
+        )}     
+
         <input 
           id="cep" 
           type="text" 
