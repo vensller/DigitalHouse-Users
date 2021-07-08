@@ -1,6 +1,10 @@
 import './App.css';
 import { useState } from 'react';
-import axios from 'axios';
+
+import Fabiano from './components/header';
+import Leo from './components/footer';
+
+import { getCepData } from './services/viacep';
 
 function App() {
   const [cep, setCep] = useState('89087491');
@@ -8,7 +12,7 @@ function App() {
   const [mustShow, setMustShow] = useState(true);
   
   async function onBlurCep() {          
-    const { data } = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+    const data = await getCepData(cep);
     setLogradouro(data.logradouro);
   }
 
@@ -18,6 +22,7 @@ function App() {
 
   return (
     <div id="background" className="background">  
+      <Fabiano />
       <button type="button" onClick={onClickHide}>Esconder campos</button>    
       <form id="formSignup">
 
@@ -51,7 +56,8 @@ function App() {
         <input id="numero" type="text" placeholder="Digite o número da casa"/> 
        
         <button id="signupBtn" type="submit">Cadastrar</button>
-      </form>               
+      </form>   
+      <Leo />            
     </div>         
   );
 }
