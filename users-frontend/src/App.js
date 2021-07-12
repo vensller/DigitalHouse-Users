@@ -1,9 +1,6 @@
 import './App.css';
 import { useState } from 'react';
 
-import Fabiano from './components/header';
-import Leo from './components/footer';
-
 import { getCepData } from './services/viacep';
 
 function App() {
@@ -21,8 +18,7 @@ function App() {
   }
 
   return (
-    <div id="background" className="background">  
-      <Fabiano />
+    <div id="background" className="background">        
       <button type="button" onClick={onClickHide}>Esconder campos</button>    
       <form id="formSignup">
 
@@ -57,7 +53,6 @@ function App() {
        
         <button id="signupBtn" type="submit">Cadastrar</button>
       </form>   
-      <Leo />            
     </div>         
   );
 }
