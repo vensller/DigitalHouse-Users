@@ -1,0 +1,16 @@
+.photoinput {
+    align-self: center;
+    margin-bottom: 20px;    
+}
+
+.photoinput > label {
+    cursor: pointer;
+}
+
+.photoinput > label:hover {
+    opacity: 0.7;
+}
+
+.photoinput > label > input {
+    display: none;
+}

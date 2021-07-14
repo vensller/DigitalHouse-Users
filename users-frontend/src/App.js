@@ -1,14 +1,16 @@
 import './App.css';
 import { useState } from 'react';
 
-import Pagination from './components/pagination';
+// import Pagination from './components/pagination';
+import PhotoInput from './components/photoInput';
 
 import { getCepData } from './services/viacep';
 
 function App() {
   const [cep, setCep] = useState('');
   const [logradouro, setLogradouro] = useState('');
-  const [page, setPage] = useState(1);
+  const [photo, setPhoto] = useState();
+  // const [page, setPage] = useState(1);
   
   async function onBlurCep() {          
     const data = await getCepData(cep);
@@ -18,7 +20,7 @@ function App() {
   return (
     <div id="background" className="background">        
       <form id="formSignup">
-    
+        <PhotoInput photo={photo} onPhotoChange={(newPhoto) => setPhoto(newPhoto)}/>    
         <span id="userErrorSignup" className="error">Usuário incorreto</span>
         <input id="userSignup" type="text" placeholder="Digite seu usuário"/> 
         <span id="passwordErrorSignup" className="error">Senha incorreta</span>       
@@ -45,10 +47,10 @@ function App() {
         <input id="numero" type="text" placeholder="Digite o número da casa"/> 
        
         <button id="signupBtn" type="submit">Cadastrar</button>
-        <Pagination 
+        {/* <Pagination 
           page={page} 
           onPageChange={(newPage) => setPage(newPage)}
-        />
+        /> */}
       </form>   
       
     </div>         
