@@ -4,6 +4,9 @@ import { useState } from 'react';
 import Pagination from './components/pagination';
 import PhotoInput from './components/photoInput';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { getCepData } from './services/viacep';
 
 function App() {
@@ -11,7 +14,7 @@ function App() {
   const [logradouro, setLogradouro] = useState('');
   const [photo, setPhoto] = useState();
   const [page, setPage] = useState(1);
-  
+ 
   async function onBlurCep() {          
     const data = await getCepData(cep);
     setLogradouro(data.logradouro);
@@ -55,7 +58,7 @@ function App() {
           onPageChange={(newPage) => setPage(newPage)}
         />
       </form>   
-      
+      <ToastContainer />      
     </div>         
   );
 }
