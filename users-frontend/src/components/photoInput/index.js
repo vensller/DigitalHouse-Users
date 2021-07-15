@@ -1,5 +1,5 @@
 import './styles.css';
-import { MdImage } from 'react-icons/md';
+import { MdImage, MdClear } from 'react-icons/md';
 
 export default function PhotoInput(props) {
 
@@ -19,9 +19,12 @@ export default function PhotoInput(props) {
 
     return (
         <div className="photoinput">
+            {props.photo && 
+                <MdClear onClick={() => props.onPhotoChange()} size={24}/>
+            }            
             <label htmlFor="image">            
                 {props.photo ? (
-                    <img src={props.photo}/>
+                    <img src={props.photo} alt=""/>
                 ) : (
                     <MdImage size={150} color="#999" />
                 )}                
