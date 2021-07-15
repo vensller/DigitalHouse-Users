@@ -20,7 +20,10 @@ function App() {
   return (
     <div id="background" className="background">        
       <form id="formSignup">
-        <PhotoInput photo={photo} onPhotoChange={(newPhoto) => setPhoto(newPhoto)}/>    
+        <PhotoInput 
+          photo={photo} 
+          onPhotoChange={(newPhoto) => setPhoto(newPhoto)}
+        />    
         <span id="userErrorSignup" className="error">Usuário incorreto</span>
         <input id="userSignup" type="text" placeholder="Digite seu usuário"/> 
         <span id="passwordErrorSignup" className="error">Senha incorreta</span>       
